@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+    <title>{% block title%}{%endblock%}</title>
+    <style>
+        .for_numbers{
+        background-color: blue;
+        width: 430px;
+        padding: 35px;
+        }
+    </style>
+</head>
+<body>
+<center><a href="http://127.0.0.1:5000"><p1><h1>На главную</h1></p1> </a></center>
+{% block body%}{%endblock%}
+</body>
+</html>

@@ -1,0 +1,12 @@
+body
+{
+height: 1200px;
+background: linear-gradient(blue, pink);
+}
+div
+ {
+height: 1000px;
+background: linear-gradient(to top left, blue, pink);
+}
+h1 { color: orange;}
+h2 {color: lime}
