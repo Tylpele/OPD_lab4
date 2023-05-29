@@ -26,7 +26,7 @@ def ball():
     if request.method == 'POST':
         radius = float(request.form.get('radius'))
         aim=int(request.form.get('aim'))
-    result=round((4/3)*math.pi*radius**3, aim)
+    result=abs(round((4/3)*math.pi*radius**3, aim))
     return render_template('ball.html', result=result)
 
 
@@ -39,7 +39,7 @@ def cone():
         radius = float(request.form.get('radius'))
         height = float(request.form.get('height'))
         aim = int(request.form.get('aim'))
-    result = round((1/3)*math.pi*radius**2*height, aim)
+    result = abs(round((1/3)*math.pi*radius**2*height, aim))
     return render_template('cone.html', result=result)
 
 
@@ -52,7 +52,7 @@ def cylinder():
         radius = float(request.form.get('radius'))
         height = float(request.form.get('height'))
         aim = int(request.form.get('aim'))
-    result = round(math.pi * radius ** 2 * height, aim)
+    result = abs(round(math.pi * radius ** 2 * height, aim))
     return render_template('cylinder.html', result=result)
 
 
@@ -65,7 +65,7 @@ def prism():
         squre = float(request.form.get('squre'))
         height = float(request.form.get('height'))
         aim = int(request.form.get('aim'))
-    result = round(squre * height, aim)
+    result = abs(round(squre * height, aim))
     return render_template('prism.html', result=result)
 
 
@@ -78,7 +78,7 @@ def pyramid():
         squre = float(request.form.get('squre'))
         height = float(request.form.get('height'))
         aim = int(request.form.get('aim'))
-    result = round((1/3)*squre * height, aim)
+    result = abs(round((1/3)*squre * height, aim))
     return render_template('prism.html', result=result)
 
 
@@ -93,10 +93,10 @@ def quder():
         length = float(request.form.get('length'))
         width = float(request.form.get('width'))
         aim = int(request.form.get('aim'))
-    result = round(length * height * width, aim)
+    result = abs(round(length * height * width, aim))
     return render_template('quder.html', result=result)
 
 
 @app.errorhandler(ValueError)
-def pageNotFount(error):
+def eror_value(error):
     return render_template('error.html')
